@@ -3,13 +3,14 @@
 <% if @current_user == nil%>
   Please log in to see a list of places
 <% else %>
+  <p>
+    <div>
+     <a href="/places/new" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">New place</a>
+    </div>
+  </p>
   <ul>
     <% for place in @places %>
       <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
     <% end %>
   </ul>
-
-  <p>
-    <a href="/places/new">New place</a>
-  </p>
 <% end %>
