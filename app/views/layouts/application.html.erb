@@ -22,22 +22,22 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Welcome to Travel Log</a>
       <span class="navbar-text">
-        <% @user = User.find_by({ "id" => session["user_id"] }) %>
-        <% if @user == nil %>
+
+        <% if @current_user == nil %>
           <a href="/users/new" class="btn btn-default" >Sign Up</a>
           |
           <a href="/login" class="btn btn-default" >Login</a>
         <% else %>
-          Logged in as: <%= @user["username"] %>
+          Logged in as: <%= @current_user["username"] %>
           |
           <a href="/logout" class="btn btn-default" >Logout</a>
           
         <% end %>
-        |
-        <a href="/places/new/" class="subtitle btn btn-dark">New Travel Log</a>
       </span>
     </div>
   </nav>
+
+  
 
     <%= yield %>
   </body>
