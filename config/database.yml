@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: adventure_archive_production
+  username: adventure_archive
+  password: <%= ENV["ADVENTURE_ARCHIVE_DATABASE_PASSWORD"] %>  
+  
